@@ -1,8 +1,8 @@
 %{
 # subject.Species
-binomial:			    varchar(64)	# binomial
+binomial:			    varchar(63)	# binomial
 -----
-species_nickname:		varchar(64)	# nickname
+species_nickname:		varchar(63)	# nickname
 %}
 
 classdef Species < dj.Lookup

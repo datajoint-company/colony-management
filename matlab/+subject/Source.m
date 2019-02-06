@@ -1,9 +1,16 @@
 %{
 # subject.Source
-source_name:				varchar(255)	# name of source
+source:                     varchar(63)     # name of source
 -----
-source_description=null:	varchar(255)	# description
+source_description='':      varchar(255)	# description
 %}
 
 classdef Source < dj.Lookup
+    properties
+        contents = {
+            'Jax Lab', ''
+            'Princeton', ''
+            'Allen Institute', ''
+        }
+    end
 end

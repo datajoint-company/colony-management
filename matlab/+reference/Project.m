@@ -1,9 +1,12 @@
 %{
 # reference.Project
-project_name:               varchar(255)
+project:                    varchar(31)
 -----
-project_description=null:   varchar(1024)
+project_description='':     varchar(1023)
 %}
 
-classdef Project < dj.Manual
+classdef Project < dj.Lookup
+    properties
+        contents = {'mouse behavior', ''}
+    end
 end

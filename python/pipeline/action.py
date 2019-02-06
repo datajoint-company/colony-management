@@ -4,14 +4,6 @@ from . import reference, subject
 schema = dj.schema(dj.config.get('database.prefix', '') + 'ibl_action')
 
 
-@schema
-class ProcedureType(dj.Manual):
-    definition = """
-    procedure_type_name:                varchar(255)
-    ---
-    procedure_type_uuid:                varchar(64)
-    procedure_type_description=null:    varchar(1024)
-    """
 
 
 @schema
@@ -21,9 +13,8 @@ class Weighing(dj.Manual):
     -> subject.Subject
     weighing_time:		datetime		# date time
     ---
-    weigh_uuid:        varchar(64)
     weight:			    float			# weight
-    -> [nullable] reference.LabMember.proj(weighing_user="user_name")
+    -> reference.User
     """
 
 
